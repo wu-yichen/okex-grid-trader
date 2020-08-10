@@ -3,12 +3,15 @@ from pprint import pprint
 import ccxt
 import pymongo
 import time
+from util import config
 
+
+config.loads('./.config.json')
 # 定义交易所
 okex = ccxt.okex({
-    'apiKey': '80f17ce1-5b2e-4d34-85ee-180bf442db3e',
-    'secret': 'F63903B0BBB041EFC1BF4AF4B24EF466',
-    'password': 'Yuukiji1747'
+    'apiKey': config.apiKey,
+    'secret': config.secret,
+    'password': config.password
 })
 
 # 定义mongodb
