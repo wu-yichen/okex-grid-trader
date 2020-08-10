@@ -1,13 +1,14 @@
 import ccxt
 import pymongo
 import time
+from util import config
 
+config.loads('./.config.json')
 # 定义交易所
-
 okex = ccxt.okex({
-    'apiKey': '',
-    'secret': '',
-    'password': ''
+    'apiKey': config.apiKey,
+    'secret': config.secret,
+    'password': config.password
 })
 
 # 定义mongodb
